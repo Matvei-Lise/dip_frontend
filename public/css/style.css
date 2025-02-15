@@ -49,6 +49,7 @@ nav ul li a {
     color: white;
     font-weight: bold;
     transition: color 0.3s;
+    font-size: 16px;
 }
 
 nav ul li a:hover {
@@ -176,6 +177,10 @@ p {
     flex-wrap: wrap;
 }
 .review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
     background: #ffffff;
     padding: 20px;
     border-radius: 10px;
