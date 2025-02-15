@@ -174,22 +174,71 @@ p {
 .booking form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    min-width: 200px;
+    gap: 20px;
+    min-width: 250px;
     max-width: 600px;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 .booking form input,
 .booking form textarea,
 .booking form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px 15px;
+    border: 2px solid #ff7e5f;
+    border-radius: 8px;
     font-size: 16px;
+    background: #fff;
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
 }
+
+.booking form input:focus,
+.booking form textarea:focus,
+.booking form select:focus {
+    border-color: #e85d4f;
+    box-shadow: 0 0 10px rgba(255, 126, 95, 0.5);
+    outline: none;
+}
+
+.booking form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff
+        url("data:image/svg+xml;utf8,<svg fill='black' viewBox='0 0 24 24' width='20px' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>")
+        no-repeat right 15px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.booking form option {
+    padding: 10px;
+}
+
+.booking form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
 .booking form .btn-info {
-    margin: 0;
+    margin-top: 10px;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        background 0.3s,
+        transform 0.2s;
+}
+
+.booking form .btn-info:hover {
+    background: linear-gradient(135deg, #e85d4f 0%, #ff9966 100%);
+    transform: translateY(-2px);
 }
 
 footer {
@@ -210,7 +259,6 @@ footer {
 .booking {
     background: linear-gradient(135deg, #da82b3d0 0%, #5fcecc 100%);
 }
-
 /* Плавные переходы */
 section {
     padding: 20px 20px;
