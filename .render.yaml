@@ -1,0 +1,5 @@
+services:
+  - name: massage-salon
+    type: static
+    buildCommand: "npm run build"
+    staticPublishPath: "dist"
