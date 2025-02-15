@@ -13,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "vite": "^6.1.0"
+  },
+  "devDependencies": {
+    "vite-plugin-static-copy": "^2.2.0"
   }
 }

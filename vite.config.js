@@ -19,15 +19,30 @@ export default defineConfig({
 });
  */
 import { defineConfig } from "vite";
+import staticCopy from "vite-plugin-static-copy";
 
 export default defineConfig({
-  base: './', // Обеспечивает корректные пути
+  base: "./",
+  plugins: [
+    staticCopy({
+      targets: [
+        {
+          src: "src/pages", // Путь к вашим страницам
+          dest: "", // Копировать прямо в dist
+        },
+        {
+          src: "src/js", // Путь к вашим страницам
+          dest: "", // Копировать прямо в dist
+        },
+      ],
+    }),
+  ],
   build: {
     outDir: "dist",
     emptyOutDir: true, // Очищает папку dist при сборке
   },
   server: {
-    port: 4000, // Или любой удобный порт
+    port: 4000,
     open: true, // Автоматически открыть браузер
   },
 });
