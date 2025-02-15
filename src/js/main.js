@@ -1,22 +1,33 @@
-const modal = document.querySelector("#modal");
-const modalMessage = document.querySelector("#modal-message");
-const closeModal = document.querySelector("#close-modal");
-
-if (modal && modalMessage && closeModal) {
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-}
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.querySelector("#booking form");
 
   bookingForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const name = bookingForm.name.value.trim();
+    const phone = bookingForm.phone.value.trim();
+    const service = bookingForm.service.value;
+    const phonePattern = /^[+]?[0-9]{10,15}$/;
+
+    if (!name) {
+      alert("Пожалуйста, введите ваше имя.");
+      return;
+    }
+
+    if (!phonePattern.test(phone)) {
+      alert("Введите корректный номер телефона (10–15 цифр).");
+      return;
+    }
+
+    if (!service) {
+      alert("Пожалуйста, выберите услугу.");
+      return;
+    }
+
     const formData = {
-      name: bookingForm.name.value,
-      phone: bookingForm.phone.value,
-      service: bookingForm.service.value,
+      name,
+      phone,
+      service,
       message: bookingForm.message.value,
     };
 
@@ -29,25 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const result = await response.json();
 
+      const modal = document.querySelector("#modal");
+      const modalMessage = document.querySelector("#modal-message");
+      const closeModal = document.querySelector("#close-modal");
+
       if (result.success) {
-        document.querySelector("#modal-message").textContent =
+        modalMessage.textContent =
           "Поздравляем, вы успешно записались на сеанс!";
-        document.querySelector("#modal").style.display = "flex";
+        modal.style.display = "flex";
         bookingForm.reset();
       } else {
-        document.querySelector("#modal-message").textContent =
-          "Произошла ошибка, попробуйте ещё раз.";
-        document.querySelector("#modal").style.display = "flex";
+        modalMessage.textContent =
+          result.message || "Произошла ошибка, попробуйте ещё раз.";
+        modal.style.display = "flex";
       }
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
     } catch (error) {
       console.error("Ошибка отправки формы:", error);
-      document.querySelector("#modal-message").textContent =
-        "Ошибка сети, попробуйте ещё раз.";
-      document.querySelector("#modal").style.display = "flex";
+      alert("Ошибка сети, попробуйте ещё раз");
     }
-  });
-
-  document.querySelector("#close-modal").addEventListener("click", () => {
-    document.querySelector("#modal").style.display = "none";
   });
 });
