@@ -199,19 +199,6 @@ p {
     font-size: 18px;
     color: #ff7e5f;
 }
-.reviews a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #ff7e5f;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-.reviews a:hover {
-    background-color: #e85d4f;
-}
 
 .booking {
     display: flex;
