@@ -21,7 +21,7 @@ export default defineConfig({
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: ".", // Указываем корень проекта
+  base: './', // Обеспечивает корректные пути
   build: {
     outDir: "dist",
     emptyOutDir: true, // Очищает папку dist при сборке
