@@ -1,55 +1,256 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Общие стили */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.btn-info {
+    margin-top: 20px;
+    padding: 10px 14px;
+    background-color: #ff7e5f;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-info:hover {
+    background-color: #e85d4f;
+}
+.btn-info a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    padding: 20px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-ul {
+nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-ul li a {
-    color: white;
+nav ul li a {
     text-decoration: none;
+    color: white;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
 }
 
 .hero {
-    padding: 50px;
+    background: url("./public/images/spa-preview.jpg") no-repeat center center/cover;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(107, 73, 73);
     text-align: center;
 }
 
-button {
-    padding: 10px 20px;
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero button {
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #ff7e5f;
+    border: none;
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero button:hover {
+    background-color: #e85d4f;
+}
+
+section {
+    padding: 20px 20px;
+}
+
+.about-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-preview h2,
+.about-preview p {
+    margin: 10px 0;
+}
+
+.services-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.team-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Отзывы */
+.reviews {
+    background-color: #fff3e0;
+    padding: 50px 20px;
+    text-align: center;
+}
+.reviews h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.review-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.review-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.review-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+.review-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.review-card .rating {
+    font-size: 18px;
+    color: #ff7e5f;
+}
+.reviews a {
+    display: inline-block;
     margin-top: 20px;
-    background-color: #28a745;
+    padding: 12px 24px;
+    background-color: #ff7e5f;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.reviews a:hover {
+    background-color: #e85d4f;
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.booking form input,
+.booking form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.booking form button {
+    padding: 12px;
+    background-color: #ff7e5f;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.booking form button:hover {
+    background-color: #e85d4f;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    background: #222;
+    background-color: #333;
     color: white;
+    text-align: center;
+    padding: 15px;
 }
 
+/* Адаптивность */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+    .card {
+        width: 100%;
+    }
+}

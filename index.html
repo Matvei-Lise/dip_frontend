@@ -33,7 +33,8 @@
       <h1>Добро пожаловать в Tranquility Spa</h1>
       <p>Расслабьтесь и насладитесь нашими массажными услугами.</p>
       <button
-        onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'});"
+        id="booking-btn"
+        onclick="document.getElementById('booking-btn').scrollIntoView({behavior: 'smooth'});"
       >
         Записаться
       </button>
@@ -45,7 +46,9 @@
         Мы предлагаем качественные массажные услуги и заботимся о вашем здоровье
         и комфорте.
       </p>
-      <a href="pages/about.html">Подробнее</a>
+      <button id="about-preview__btn" class="btn-info">
+        <a href="pages/about.html">Подробнее</a>
+      </button>
     </section>
 
     <section class="services-preview">
@@ -67,7 +70,9 @@
           <p>Восстановление после тренировок.</p>
         </div>
       </div>
-      <a href="pages/services.html">Все услуги</a>
+      <button id="services-preview__btn" class="btn-info">
+        <a href="pages/services.html">Все услуги</a>
+      </button>
     </section>
 
     <section class="team-preview">
@@ -89,7 +94,32 @@
           <p>Ароматерапия, релакс.</p>
         </div>
       </div>
-      <a href="pages/team.html">Все мастера</a>
+      <button id="team-preview__btn" class="btn-info">
+        <a href="pages/team.html">Все мастера</a>
+      </button>
+    </section>
+
+    <!-- HTML Блок с отзывами -->
+    <section class="reviews">
+      <h2>Отзывы</h2>
+      <div class="review-cards">
+        <div class="review-card">
+          <p>«Отличный массаж, вернусь ещё!»</p>
+          <div class="rating">Оценка: 9/10</div>
+          <h3>Анна К.</h3>
+        </div>
+        <div class="review-card">
+          <p>«Потрясающий сервис и атмосфера!»</p>
+          <div class="rating">Оценка: 10/10</div>
+          <h3>Игорь П.</h3>
+        </div>
+        <div class="review-card">
+          <p>«Лучшие мастера, рекомендую!»</p>
+          <div class="rating">Оценка: 8/10</div>
+          <h3>Мария С.</h3>
+        </div>
+      </div>
+      <a href="pages/reviews.html">Все отзывы</a>
     </section>
 
     <section id="booking" class="booking">
