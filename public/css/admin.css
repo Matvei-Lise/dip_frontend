@@ -102,3 +102,92 @@ button.action-btn {
 button.action-btn:hover {
     background-color: #e85d4f;
 }
+
+/* Адаптивный дизайн для admin */
+@media (max-width: 768px) {
+    #admin-login input {
+        width: 80%;
+    }
+
+    #admin-content {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    button.action-btn {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    table,
+    th,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        display: none; /* Скрываем заголовки */
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    #admin-login input {
+        width: 100%;
+        margin: 8px;
+    }
+
+    #login-btn {
+        width: 100%;
+        padding: 8px;
+    }
+
+    button.action-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
