@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadBookings() {
     try {
-      const response = await fetch("https://dip-backend.onrender.com/api/bookings");
+      const response = await fetch(
+        "https://dip-backend.onrender.com/api/bookings"
+      );
       const bookings = await response.json();
 
       bookings.forEach((booking) => {
