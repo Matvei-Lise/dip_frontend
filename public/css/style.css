@@ -94,9 +94,8 @@ nav ul li a:hover {
 
 .about {
     background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-    flex: 1; /* Занимает всё доступное пространство */
-    justify-content: start; /* Центрирование по вертикали */
-   /*  padding: 20px; */
+    flex: 1;
+    justify-content: start;
 }
 
 .about p {
