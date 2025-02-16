@@ -67,3 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burger-menu");
+  const navLinks = document.querySelector("header nav ul");
+
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  // Закрытие меню при клике вне его
+  document.addEventListener("click", (e) => {
+    if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove("show");
+    }
+  });
+});
