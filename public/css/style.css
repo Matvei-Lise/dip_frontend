@@ -30,7 +30,7 @@ body {
     background-color: #e85d4f;
 }
 .btn-info {
-    margin-top: 20px;
+    margin: 20px 10px 0;
     padding: 10px 14px;
     background-color: #ff7e5f;
     border: none;
