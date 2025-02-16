@@ -138,8 +138,9 @@
       <form action="#" method="post">
         <input type="text" name="name" placeholder="Ваше имя" required />
         <input type="tel" name="phone" placeholder="Ваш телефон" required />
-        <select name="service" required>
-          <option value="" disabled selected>Выберите услугу</option>
+        <label for="service" class="visually-hidden">Выберите услугу:</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Выберите услугу:</option>
           <option value="Тайский массаж 1">Тайский массаж 1</option>
           <option value="Тайский массаж 2">Тайский массаж 2</option>
           <option value="Тайский массаж 3">Тайский массаж 3</option>
