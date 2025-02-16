@@ -316,9 +316,16 @@ section {
         flex-direction: column;
     }
     .hero h1 {
-        font-size: 32px;
+        font-size: 26px;
+    }
+    .hero button {
+        font-size: 18px;
     }
     .card {
         width: 100%;
+    }
+    #footer p {
+        font-size: 14px;
+        margin: 0;
     }
 }
