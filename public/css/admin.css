@@ -49,6 +49,7 @@ h1 {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-x: auto; /* Добавляем горизонтальную прокрутку */
 }
 
 h2 {
@@ -61,6 +62,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    min-width: 600px; /* Минимальная ширина таблицы */
 }
 
 th,
@@ -68,6 +70,7 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    white-space: nowrap; /* Запрещаем перенос текста */
 }
 
 th {
@@ -131,21 +134,6 @@ tr:hover {
     th,
     td {
         padding: 4px;
-        word-wrap: break-word;
-        white-space: normal;
-    }
-
-    th,
-    td {
-        display: block;
-        width: 100%;
-    }
-
-    tr {
-        display: block;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        padding: 5px;
     }
 
     .btn-action {
