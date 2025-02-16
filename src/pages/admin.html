@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ-панель</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+  <body>
+    <h1>Админ-панель Tranquility Spa</h1>
+    <div id="admin-login">
+      <input type="password" id="admin-password" placeholder="Введите пароль" />
+      <button id="login-btn">Войти</button>
+    </div>
+    <div id="admin-content" style="display: none">
+      <h2>Заявки</h2>
+      <table id="bookings-table">
+        <tr>
+          <th>Имя</th>
+          <th>Телефон</th>
+          <th>Услуга</th>
+          <th>Сообщение</th>
+          <th>Дата</th>
+          <th>Статус</th>
+          <th>Действия</th>
+        </tr>
+      </table>
+    </div>
+    <script type="module" src="/js/admin.js"></script>
+  </body>
+</html>
