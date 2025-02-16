@@ -1,193 +1,154 @@
+/* Общие стили */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #ffd3a5 0%, #fd6585 100%);
     color: #333;
-}
-
-h1 {
-    text-align: center;
-    padding: 20px;
-    background-color: #ff7e5f;
-    color: white;
-    margin: 0;
-}
-
-#admin-login {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+}
+
+/* Заголовок */
+h1 {
+    margin: 20px 0;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Логин */
+#admin-login {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
 #admin-login input {
     padding: 10px;
-    margin: 10px;
-    width: 300px;
-    border: 1px solid #ccc;
+    margin-right: 10px;
+    border: 2px solid #ff7e5f;
     border-radius: 5px;
-    font-size: 16px;
 }
 
-#login-btn {
+#admin-login button {
     padding: 10px 20px;
     background-color: #ff7e5f;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
     transition: background 0.3s;
 }
 
-#login-btn:hover {
+#admin-login button:hover {
     background-color: #e85d4f;
 }
 
+/* Контент */
 #admin-content {
-    margin: 20px;
-    background-color: white;
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 90%;
+    max-width: 1000px;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
-table {
+/* Таблица */
+#bookings-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-table,
-th,
-td {
+#bookings-table th,
+#bookings-table td {
     border: 1px solid #ddd;
-}
-
-th,
-td {
     padding: 12px;
     text-align: left;
 }
 
-th {
+#bookings-table th {
     background-color: #ff7e5f;
     color: white;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+#bookings-table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-tr:hover {
+#bookings-table tr:hover {
     background-color: #f1f1f1;
 }
 
-button.action-btn {
+button {
     padding: 6px 12px;
     margin: 2px;
-    background-color: #ff7e5f;
-    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-button.action-btn:hover {
-    background-color: #e85d4f;
+button:hover {
+    background-color: #ffb199;
 }
 
-/* Адаптивный дизайн для admin */
+/* Адаптивность */
 @media (max-width: 768px) {
-    #admin-login input {
-        width: 80%;
-    }
-
-    #admin-content {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    table,
-    th,
-    td {
-        font-size: 14px;
-    }
-
-    th,
-    td {
-        padding: 8px;
-    }
-
-    h1 {
-        font-size: 24px;
-        padding: 15px;
-    }
-
-    h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-
-    button.action-btn {
-        padding: 5px 10px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    table,
-    th,
-    td {
+    #bookings-table {
         display: block;
-        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
-    th {
-        display: none; /* Скрываем заголовки */
+    #bookings-table table,
+    #bookings-table thead,
+    #bookings-table tbody,
+    #bookings-table th,
+    #bookings-table td,
+    #bookings-table tr {
+        display: block;
     }
 
-    td {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px;
+    #bookings-table thead tr {
+        display: none;
+    }
+
+    #bookings-table tr {
+        margin-bottom: 15px;
         border: 1px solid #ddd;
+        padding: 10px;
+        background: #fff;
     }
 
-    td::before {
+    #bookings-table td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+    }
+
+    #bookings-table td::before {
         content: attr(data-label);
         font-weight: bold;
-        text-transform: uppercase;
+        display: inline-block;
+        margin-right: 10px;
     }
 
-    h1 {
-        font-size: 20px;
-        padding: 10px;
-    }
-
+    h1,
     h2 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    #admin-login input {
-        width: 100%;
-        margin: 8px;
-    }
-
-    #login-btn {
-        width: 100%;
-        padding: 8px;
-    }
-
-    button.action-btn {
-        width: 100%;
-        margin: 5px 0;
+        font-size: 20px;
     }
 }
