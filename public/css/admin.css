@@ -19,12 +19,14 @@ body {
 .title h1 {
     color: white;
     font-size: 28px;
+    margin: 0;
 }
 .title a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
     font-size: 16px;
+    color: white;
 }
 
 .title a:hover {
