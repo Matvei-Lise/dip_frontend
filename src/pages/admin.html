@@ -12,19 +12,21 @@
       <input type="password" id="admin-password" placeholder="Введите пароль" />
       <button id="login-btn">Войти</button>
     </div>
-    <h2>Заявки</h2>
     <div id="admin-content" style="display: none">
-      <table id="bookings-table">
-        <tr>
-          <th>Имя</th>
-          <th>Телефон</th>
-          <th>Услуга</th>
-          <th>Сообщение</th>
-          <th>Дата</th>
-          <th>Статус</th>
-          <th>Действия</th>
-        </tr>
-      </table>
+      <h2>Заявки</h2>
+      <div class="table-container">
+        <table id="bookings-table">
+          <tr>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Услуга</th>
+            <th>Сообщение</th>
+            <th>Дата</th>
+            <th>Статус</th>
+            <th>Действия</th>
+          </tr>
+        </table>
+      </div>
     </div>
     <script type="module" src="/js/admin.js"></script>
   </body>

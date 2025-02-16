@@ -15,6 +15,9 @@ h1 {
     color: white;
     margin: 0;
     font-size: 28px;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Чтобы заголовок был поверх */
 }
 
 #admin-login {
@@ -24,32 +27,12 @@ h1 {
     margin: 20px;
 }
 
-#admin-login input,
-#admin-login button {
-    margin: 5px;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ff7e5f;
-}
-
-#admin-login button {
-    background-color: #ff7e5f;
-    color: white;
-    cursor: pointer;
-}
-
-#admin-login button:hover {
-    background-color: #e85d4f;
-}
-
 #admin-content {
     background-color: white;
     margin: 10px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow-x: auto; /* Добавляем горизонтальную прокрутку */
 }
 
 h2 {
@@ -58,11 +41,16 @@ h2 {
     font-size: 24px;
 }
 
+/* Прокрутка только для таблицы */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    min-width: 600px; /* Минимальная ширина таблицы */
+    min-width: 600px;
 }
 
 th,
@@ -70,7 +58,7 @@ td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    white-space: nowrap; /* Запрещаем перенос текста */
+    white-space: nowrap;
 }
 
 th {
