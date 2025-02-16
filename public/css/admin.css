@@ -7,17 +7,28 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-h1 {
+.title {
     text-align: center;
     padding: 20px;
     background-color: #ff7e5f;
-    color: white;
     margin: 0;
-    font-size: 28px;
-    position: sticky;
     top: 0;
     z-index: 1000; /* Чтобы заголовок был поверх */
+    position: sticky;
+}
+.title h1 {
+    color: white;
+    font-size: 28px;
+}
+.title a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+.title a:hover {
+    color: #ffeb3b;
 }
 
 #admin-login {
