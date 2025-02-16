@@ -1,154 +1,155 @@
-/* Общие стили */
 body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ffd3a5 0%, #fd6585 100%);
-    color: #333;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-/* Заголовок */
 h1 {
-    margin: 20px 0;
-    font-size: 32px;
-    color: #fff;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 20px;
+    background-color: #ff7e5f;
+    color: white;
+    margin: 0;
+    font-size: 28px;
 }
 
-/* Логин */
 #admin-login {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 20px;
 }
 
-#admin-login input {
-    padding: 10px;
-    margin-right: 10px;
-    border: 2px solid #ff7e5f;
+#admin-login input,
+#admin-login button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
     border-radius: 5px;
+    border: 1px solid #ff7e5f;
 }
 
 #admin-login button {
-    padding: 10px 20px;
     background-color: #ff7e5f;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 #admin-login button:hover {
     background-color: #e85d4f;
 }
 
-/* Контент */
 #admin-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    width: 90%;
-    max-width: 1000px;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px 0;
     font-size: 24px;
 }
 
-/* Таблица */
-#bookings-table {
+table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
-#bookings-table th,
-#bookings-table td {
+th,
+td {
     border: 1px solid #ddd;
-    padding: 12px;
+    padding: 8px;
     text-align: left;
 }
 
-#bookings-table th {
+th {
     background-color: #ff7e5f;
     color: white;
 }
 
-#bookings-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-#bookings-table tr:hover {
-    background-color: #f1f1f1;
+tr:hover {
+    background-color: #f1c5b5;
 }
 
-button {
-    padding: 6px 12px;
-    margin: 2px;
+.btn-action {
+    background-color: #ff7e5f;
+    color: white;
     border: none;
-    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-button:hover {
-    background-color: #ffb199;
+.btn-action:hover {
+    background-color: #e85d4f;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
-    #bookings-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    #bookings-table table,
-    #bookings-table thead,
-    #bookings-table tbody,
-    #bookings-table th,
-    #bookings-table td,
-    #bookings-table tr {
-        display: block;
-    }
-
-    #bookings-table thead tr {
-        display: none;
-    }
-
-    #bookings-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
+    #admin-content {
+        margin: 10px;
         padding: 10px;
-        background: #fff;
     }
 
-    #bookings-table td {
-        text-align: left;
-        padding: 8px;
-        border-bottom: 1px solid #ddd;
-        position: relative;
+    table {
+        font-size: 12px;
     }
 
-    #bookings-table td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: inline-block;
-        margin-right: 10px;
+    th,
+    td {
+        padding: 6px;
     }
 
-    h1,
-    h2 {
-        font-size: 20px;
+    .btn-action {
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #admin-content {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    th,
+    td {
+        padding: 4px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        padding: 5px;
+    }
+
+    .btn-action {
+        padding: 3px 6px;
+        font-size: 10px;
     }
 }
