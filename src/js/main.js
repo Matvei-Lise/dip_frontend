@@ -67,9 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+  /* меню бургер */
   const burger = document.getElementById("burger-menu");
   const navLinks = document.querySelector("header nav ul");
 
