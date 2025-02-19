@@ -107,7 +107,7 @@
         <!-- Карточки услуг -->
         <div class="services-cards">
           <div class="card">
-            <img src="/public/img/thai-massage.avif" alt="Тайский массаж" />
+            <img src="/img/thai-massage.avif" alt="Тайский массаж" />
             <h3>Тайский массаж</h3>
             <p>
               Глубокая проработка мышц, улучшение кровообращения и
@@ -116,7 +116,7 @@
           </div>
 
           <div class="card">
-            <img src="/public/img/aroma-massage.webp" alt="Ароматерапия" />
+            <img src="/img/aroma-massage.webp" alt="Ароматерапия" />
             <h3>Ароматерапия</h3>
             <p>
               Расслабляющий массаж с эфирными маслами для гармонии и
@@ -125,10 +125,7 @@
           </div>
 
           <div class="card">
-            <img
-              src="/public/img/relax-massage.jpeg"
-              alt="Расслабляющий массаж"
-            />
+            <img src="/img/relax-massage.jpeg" alt="Расслабляющий массаж" />
             <h3>Расслабляющий массаж</h3>
             <p>Помогает снять стресс, расслабить тело и улучшить настроение.</p>
           </div>
@@ -146,19 +143,19 @@
         <!-- Карточки мастеров -->
         <div class="team-cards">
           <div class="card">
-            <img src="/public/img/мастер1.jpg" alt="Анна Смирнова" />
+            <img src="/img/мастер1.jpg" alt="Анна Смирнова" />
             <h3>Анна Смирнова</h3>
             <p>Тайский массаж, ароматерапия.</p>
           </div>
 
           <div class="card">
-            <img src="/public/img/мастер3.webp" alt="Дмитрий Иванов" />
+            <img src="/img/мастер3.webp" alt="Дмитрий Иванов" />
             <h3>Дмитрий Иванов</h3>
             <p>Спортивный и расслабляющий массаж.</p>
           </div>
 
           <div class="card">
-            <img src="/public/img/i.webp" alt="Екатерина Петрова" />
+            <img src="/img/i.webp" alt="Екатерина Петрова" />
             <h3>Екатерина Петрова</h3>
             <p>Ароматерапия, расслабляющий массаж.</p>
           </div>
@@ -205,33 +202,66 @@
       </div>
     </section>
 
-    <section id="booking" class="preview booking">
-      <h2>Запись на сеанс</h2>
-      <form action="#" method="post">
-        <input type="text" name="name" placeholder="Ваше имя" required />
-        <input type="tel" name="phone" placeholder="Ваш телефон" required />
-        <label for="service" class="visually-hidden">Выберите услугу:</label>
-        <select id="service" name="service" required>
-          <option value="" disabled selected>Выберите услугу:</option>
-          <option value="Тайский массаж 1">Тайский массаж 1</option>
-          <option value="Тайский массаж 2">Тайский массаж 2</option>
-          <option value="Тайский массаж 3">Тайский массаж 3</option>
-          <option value="Тайский массаж 4">Тайский массаж 4</option>
-          <option value="Тайский массаж 5">Тайский массаж 5</option>
-          <option value="Ароматерапия 1">Ароматерапия 1</option>
-          <option value="Ароматерапия 2">Ароматерапия 2</option>
-          <option value="Ароматерапия 3">Ароматерапия 3</option>
-          <option value="Ароматерапия 4">Ароматерапия 4</option>
-          <option value="Расслабляющий массаж 1">Расслабляющий массаж 1</option>
-          <option value="Расслабляющий массаж 2">Расслабляющий массаж 2</option>
-          <option value="Расслабляющий массаж 3">Расслабляющий массаж 3</option>
-          <option value="Расслабляющий массаж 4">Расслабляющий массаж 4</option>
-          <option value="Расслабляющий массаж 5">Расслабляющий массаж 5</option>
-        </select>
-        <textarea name="message" placeholder="Ваше сообщение"></textarea>
-        <button type="submit" class="btn-info">Отправить</button>
-      </form>
+    <section id="booking" class="booking-section">
+      <div class="booking-container">
+        <h2 class="booking-title">Запишитесь <span>на массаж</span></h2>
+        <p class="booking-subtitle">Заполните форму, и мы свяжемся с вами</p>
+
+        <form id="booking-form">
+          <div class="form-group">
+            <label for="name">Имя</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ваше имя"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+7 777 123 45 67"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Выберите услугу</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Выберите услугу</option>
+              <option value="Тайский массаж 1">Тайский массаж 1</option>
+              <option value="Тайский массаж 2">Тайский массаж 2</option>
+              <option value="Ароматерапия 1">Ароматерапия 1</option>
+              <option value="Ароматерапия 2">Ароматерапия 2</option>
+              <option value="Расслабляющий массаж 1">
+                Расслабляющий массаж 1
+              </option>
+              <option value="Расслабляющий массаж 2">
+                Расслабляющий массаж 2
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Сообщение (необязательно)</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Ваше сообщение..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Отправить</button>
+        </form>
+      </div>
     </section>
+
+    <!-- Модальное окно -->
     <div id="modal" class="modal">
       <div class="modal-content">
         <p id="modal-message"></p>
