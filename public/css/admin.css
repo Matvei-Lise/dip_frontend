@@ -1,144 +1,188 @@
+/* === ГЛОБАЛЬНЫЕ СТИЛИ === */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    background: linear-gradient(180deg, #fcf7f3 0%, #f8f5f2 100%);
+    color: #5a4637;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
+
+/* === ЗАГОЛОВОК И ССЫЛКА НАЗАД === */
 .title {
-    text-align: center;
-    padding: 20px;
-    background-color: #ff7e5f;
-    margin: 0;
-    top: 0;
-    z-index: 1000; /* Чтобы заголовок был поверх */
-    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
 }
+
 .title h1 {
-    color: white;
-    font-size: 28px;
-    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    color: #4a3b2b;
 }
+
 .title a {
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    font-size: 16px;
+    background: #d79b69;
     color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .title a:hover {
-    color: #ffeb3b;
+    background: #ae7753;
 }
 
+/* === БЛОК ЛОГИНА === */
 #admin-login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 350px;
 }
 
-#admin-content {
-    background-color: white;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
+#admin-login input {
+    padding: 12px;
+    border: 2px solid #b29482;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
     text-align: center;
-    margin: 10px 0;
-    font-size: 24px;
 }
 
-/* Прокрутка только для таблицы */
+#admin-login button {
+    margin-top: 15px;
+    padding: 12px;
+    background: #b29482;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#admin-login button:hover {
+    background: #8c6e5a;
+}
+
+/* === КОНТЕНТ АДМИНКИ === */
+#admin-content {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1100px;
+    margin-bottom: 30px;
+}
+#admin-content h2 {
+    margin: 0;
+}
+
+/* === ТАБЛИЦА С ЗАЯВКАМИ === */
 .table-container {
     overflow-x: auto;
-    margin-top: 20px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
+    margin-top: 20px;
 }
 
 th,
 td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
-    white-space: nowrap;
 }
 
 th {
-    background-color: #ff7e5f;
-    color: white;
+    background: #e1d4c8;
+    font-weight: 600;
+    color: #4a3b2b;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+td {
+    background: white;
 }
 
 tr:hover {
-    background-color: #f1c5b5;
+    background: #f5f1eb;
 }
 
-.btn-action {
-    background-color: #ff7e5f;
-    color: white;
+/* === КНОПКИ ДЕЙСТВИЙ === */
+button.mark-done,
+button.delete {
     border: none;
-    padding: 5px 10px;
-    margin: 2px;
-    border-radius: 4px;
+    padding: 8px 12px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
 }
 
-.btn-action:hover {
-    background-color: #e85d4f;
+button.mark-done {
+    background: #4caf50;
+    color: white;
 }
 
+button.mark-done:hover {
+    background: #388e3c;
+}
+
+button.delete {
+    background: #f44336;
+    color: white;
+}
+
+button.delete:hover {
+    background: #d32f2f;
+}
+
+/* === АДАПТИВНОСТЬ === */
 @media (max-width: 768px) {
+    #admin-login {
+        width: 90%;
+    }
+
+    .title {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
     #admin-content {
-        margin: 10px;
-        padding: 10px;
+        width: 95%;
+        padding: 20px;
     }
 
     table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+    button.mark-done,
+    button.delete {
+        padding: 6px 10px;
         font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 6px;
-    }
-
-    .btn-action {
-        padding: 4px 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    #admin-content {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    table {
-        font-size: 10px;
-    }
-
-    th,
-    td {
-        padding: 4px;
-    }
-
-    .btn-action {
-        padding: 3px 6px;
-        font-size: 10px;
     }
 }

@@ -8,9 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loginBtn.addEventListener("click", () => {
     if (adminPassword.value === ADMIN_PASS) {
-      adminPassword.style.display = "none";
-      loginBtn.style.display = "none";
+      // Скрываем блок логина
+      document.getElementById("admin-login").style.display = "none";
+
+      // Показываем контент админки
       adminContent.style.display = "block";
+
+      // Загружаем заявки
       loadBookings();
     } else {
       alert("Неверный пароль!");
