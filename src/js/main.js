@@ -67,18 +67,45 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  /* меню бургер */
+
+  /* === Меню-бургер === */
   const burger = document.getElementById("burger-menu");
   const navLinks = document.querySelector("header nav ul");
 
-  burger.addEventListener("click", () => {
+  burger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    burger.classList.toggle("active");
     navLinks.classList.toggle("show");
   });
 
   // Закрытие меню при клике вне его
-  document.addEventListener("click", (e) => {
-    if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
+  document.addEventListener("click", (event) => {
+    if (!burger.contains(event.target) && !navLinks.contains(event.target)) {
+      burger.classList.remove("active");
       navLinks.classList.remove("show");
     }
   });
+
+  // Исключаем задержку появления меню
+  navLinks.addEventListener("transitionend", () => {
+    if (!navLinks.classList.contains("show")) {
+      navLinks.style.display = "none";
+    }
+  });
+
+  // При открытии меню сразу включаем display: flex
+  burger.addEventListener("click", () => {
+    if (navLinks.classList.contains("show")) {
+      navLinks.style.display = "flex";
+    }
+  });
+  const bookingBtn = document.getElementById("booking-btn");
+  const bookingSection = document.getElementById("booking");
+
+  if (bookingBtn && bookingSection) {
+    bookingBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      bookingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 });

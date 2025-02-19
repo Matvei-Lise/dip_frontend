@@ -1,12 +1,16 @@
 /* === ГЛОБАЛЬНЫЕ СТИЛИ === */
-html {
+html,
+body {
     width: 100%;
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
 body {
     font-family: "Poppins", sans-serif;
     margin: 0 auto;
-    padding: 0;
     background: linear-gradient(180deg, #fcf7f3 0%, #f8f5f2 100%);
     color: #5a4637;
     display: flex;
@@ -24,11 +28,11 @@ h3 {
     text-transform: uppercase;
     color: #4a3b2b;
 }
-
-/* === HEADER (ШАПКА) === */
 header {
-    background: #f4ede5; /* Нежный бежевый фон */
-    padding: 15px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background: #f4ede5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +42,7 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Навигация */
+/* === МЕНЮ === */
 nav ul {
     list-style: none;
     padding: 0;
@@ -68,11 +72,17 @@ nav ul li a:hover {
     background: #c8a68a;
 }
 
-/* Бургер-меню */
+/* === МЕНЮ-БУРГЕР (адаптивное меню) === */
 .burger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    padding: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 1100;
+    position: relative;
 }
 
 .burger-menu span {
@@ -81,13 +91,14 @@ nav ul li a:hover {
     width: 30px;
     height: 3px;
     border-radius: 2px;
+    transition: all 0.3s ease-in-out;
 }
+
 /* !!           ! HERO !          !! */
-/* === HERO (ГЛАВНЫЙ ЭКРАН) === */
 .hero {
     position: relative;
     width: 100%;
-    height: 450px;
+    min-height: 400px;
     background:
         url("/public/img/hero1.avif") left center/33% no-repeat,
         url("/public/img/hero2.jpg") center center/33% no-repeat,
@@ -591,38 +602,6 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* === МОДАЛЬНОЕ ОКНО === */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#close-modal {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #b29482;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 /* !            FOOTER                    ! */
 footer {
     background: #f4ede5;
@@ -637,9 +616,70 @@ footer {
 /* !        Адаптивность        */
 
 @media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+    #header {
+        padding: 0;
+    }
+    nav ul {
+        display: none; /* Скрываем меню по умолчанию */
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: #f4ede5;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    nav ul.show {
+        display: flex; /* Показываем перед анимацией */
+        padding: 0;
+        opacity: 1;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+        min-height: 150px;
+    }
+    .hero-overlay {
+        padding: 0px;
+        margin-top: 0;
+    }
+    .hero-overlay h1 {
+        font-size: 20px;
+    }
+
     .about-container {
         flex-direction: column;
         text-align: center;
+        padding: 0 10px;
+    }
+
+    #booking-btn {
+        padding: 6px 12px;
+        font-size: 16px;
+        margin-top: 30px;
     }
 
     .about-content {
@@ -648,6 +688,10 @@ footer {
 
     .about-image img {
         max-width: 300px;
+    }
+
+    .services-container {
+        padding: 0 10px;
     }
     .services-title {
         font-size: 18px;
@@ -665,6 +709,9 @@ footer {
     .service-card {
         max-width: 90%;
     }
+    .team-container {
+        padding: 0 10px;
+    }
     .team-title {
         font-size: 18px;
     }
@@ -678,8 +725,11 @@ footer {
         align-items: center;
     }
 
-    .team-card {
-        max-width: 90%;
+    .team-cards .card img {
+        min-height: 280px;
+    }
+    .reviews-container {
+        padding: 0 10px;
     }
     .reviews-title {
         font-size: 18px;
@@ -695,7 +745,7 @@ footer {
     }
 
     .review-card {
-        max-width: 90%;
+        max-width: 360px;
     }
     .booking-title {
         font-size: 18px;
