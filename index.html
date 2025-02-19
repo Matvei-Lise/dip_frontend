@@ -106,7 +106,7 @@
 
         <!-- Карточки услуг -->
         <div class="services-cards">
-          <div class="service-card">
+          <div class="card">
             <img src="/public/img/thai-massage.avif" alt="Тайский массаж" />
             <h3>Тайский массаж</h3>
             <p>
@@ -115,7 +115,7 @@
             </p>
           </div>
 
-          <div class="service-card">
+          <div class="card">
             <img src="/public/img/aroma-massage.webp" alt="Ароматерапия" />
             <h3>Ароматерапия</h3>
             <p>
@@ -124,7 +124,7 @@
             </p>
           </div>
 
-          <div class="service-card">
+          <div class="card">
             <img
               src="/public/img/relax-massage.jpeg"
               alt="Расслабляющий массаж"
@@ -139,55 +139,70 @@
       </div>
     </section>
 
-    <section class="preview team">
-      <h2>Наши мастера</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="./public/img/мастер1.jpg" alt="Мастер 1" loading="lazy" />
-          <h3>Анна Смирнова</h3>
-          <p>Тайский массаж, арома.</p>
-        </div>
-        <div class="card">
-          <img src="./public/img/мастер3.webp" alt="Мастер 2" loading="lazy" />
-          <h3>Дмитрий Иванов</h3>
-          <p>Спортивный массаж.</p>
-        </div>
-        <div class="card">
-          <img src="./public/img/i.webp" alt="Мастер 3" loading="lazy" />
-          <h3>Екатерина Петрова</h3>
-          <p>Ароматерапия, релакс.</p>
-        </div>
-      </div>
+    <section class="team">
+      <div class="team-container">
+        <h2 class="team-title">Наши <span>Мастера</span></h2>
 
-      <a href="pages/team.html">
-        <button id="team-preview__btn" class="btn-info">Все мастера</button></a
-      >
+        <!-- Карточки мастеров -->
+        <div class="team-cards">
+          <div class="card">
+            <img src="/public/img/мастер1.jpg" alt="Анна Смирнова" />
+            <h3>Анна Смирнова</h3>
+            <p>Тайский массаж, ароматерапия.</p>
+          </div>
+
+          <div class="card">
+            <img src="/public/img/мастер3.webp" alt="Дмитрий Иванов" />
+            <h3>Дмитрий Иванов</h3>
+            <p>Спортивный и расслабляющий массаж.</p>
+          </div>
+
+          <div class="card">
+            <img src="/public/img/i.webp" alt="Екатерина Петрова" />
+            <h3>Екатерина Петрова</h3>
+            <p>Ароматерапия, расслабляющий массаж.</p>
+          </div>
+        </div>
+
+        <!-- Кнопка -->
+        <a href="/pages/team.html" class="btn-more">Все мастера</a>
+      </div>
     </section>
 
-    <!-- HTML Блок с отзывами -->
-    <section class="preview reviews">
-      <h2>Отзывы</h2>
-      <div class="cards">
-        <div class="card review-card">
-          <p>«Отличный массаж, вернусь ещё!»</p>
-          <div class="rating">Оценка: 9/10</div>
-          <h3>Анна К.</h3>
-        </div>
-        <div class="card review-card">
-          <p>«Потрясающий сервис и атмосфера!»</p>
-          <div class="rating">Оценка: 10/10</div>
-          <h3>Игорь П.</h3>
-        </div>
-        <div class="card review-card">
-          <p>«Лучшие мастера, рекомендую!»</p>
-          <div class="rating">Оценка: 8/10</div>
-          <h3>Мария С.</h3>
-        </div>
-      </div>
+    <section class="reviews">
+      <div class="reviews-container">
+        <h2 class="reviews-title">Что говорят <span>наши клиенты</span></h2>
 
-      <a href="pages/reviews.html">
-        <button id="reviews__btn" class="btn-info">Все отзывы</button></a
-      >
+        <!-- Карточки отзывов -->
+        <div class="reviews-cards">
+          <div class="review-card">
+            <p class="review-text">
+              "Лучший массажный салон! Атмосфера невероятная, а мастера знают
+              свое дело. Спасибо!"
+            </p>
+            <h3 class="review-author">Анна К.</h3>
+          </div>
+
+          <div class="review-card">
+            <p class="review-text">
+              "Остался очень доволен! Обязательно приду ещё. Расслабление на
+              100%!"
+            </p>
+            <h3 class="review-author">Игорь П.</h3>
+          </div>
+
+          <div class="review-card">
+            <p class="review-text">
+              "Массаж был просто волшебным! Прекрасное место для отдыха и
+              релаксации."
+            </p>
+            <h3 class="review-author">Мария С.</h3>
+          </div>
+        </div>
+
+        <!-- Кнопка -->
+        <a href="/pages/reviews.html" class="btn-more">Все отзывы</a>
+      </div>
     </section>
 
     <section id="booking" class="preview booking">
