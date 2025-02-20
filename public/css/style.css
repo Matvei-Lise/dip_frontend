@@ -94,6 +94,19 @@ nav ul li a:hover {
     transition: all 0.3s ease-in-out;
 }
 
+/* При активации бургера */
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 /* !!           ! HERO !          !! */
 .hero {
     position: relative;
@@ -623,7 +636,7 @@ footer {
         padding: 0;
     }
     nav ul {
-        display: none; /* Скрываем меню по умолчанию */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 50px;
