@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("path-to-font.woff2") format("woff2");
+    font-display: swap;
+}
 /* === ГЛОБАЛЬНЫЕ СТИЛИ === */
 html,
 body {
@@ -185,6 +190,8 @@ nav ul li a:hover {
 .about-image img {
     width: 100%;
     max-width: 350px;
+    height: auto;
+    aspect-ratio: 16/9; /* Пропорции */
     border-radius: 10px;
     border: 5px solid #e1d4c8;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
@@ -194,6 +201,7 @@ nav ul li a:hover {
 .about-content {
     flex: 1.5;
     text-align: left;
+    min-height: 200px;
 }
 
 .about-title {
