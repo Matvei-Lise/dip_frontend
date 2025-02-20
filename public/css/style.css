@@ -113,7 +113,7 @@ nav ul li a:hover {
     width: 100%;
     min-height: 400px;
     background:
-        url("/public/img/hero1.avif") left center/33% no-repeat,
+        url("/public/img/hero1.jpg") left center/33% no-repeat,
         url("/public/img/hero2.jpg") center center/33% no-repeat,
         url("/public/img/hero3.jpg") right center/33% no-repeat;
     display: flex;
