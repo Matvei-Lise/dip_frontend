@@ -564,6 +564,20 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+.form-group select {
+    color: #6e4f3a; /* Цвет текста до выбора */
+}
+
+/* Стиль только для placeholder (disabled selected) */
+.form-group select option[value=""][disabled] {
+    color: #6e4f3a;
+}
+
+/* После выбора option он будет черным */
+.form-group select:valid {
+    color: #030303;
+}
+
 .form-group textarea {
     resize: vertical;
     min-height: 100px;
