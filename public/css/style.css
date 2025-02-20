@@ -1,9 +1,3 @@
-@font-face {
-    font-family: "Poppins";
-    src: url("path-to-font.woff2") format("woff2");
-    font-display: swap;
-}
-/* === ГЛОБАЛЬНЫЕ СТИЛИ === */
 html,
 body {
     width: 100%;
@@ -14,7 +8,8 @@ body {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 400;
     margin: 0 auto;
     background: linear-gradient(180deg, #fcf7f3 0%, #f8f5f2 100%);
     color: #5a4637;
@@ -29,6 +24,7 @@ body {
 h1,
 h2,
 h3 {
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     color: #4a3b2b;
@@ -140,9 +136,13 @@ nav ul li a:hover {
 .hero h1 {
     font-size: 36px;
     font-weight: 600;
-    color: #eba657;
+    color: #df8943;
     text-transform: uppercase;
     margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.5); /* Затемненный фон */
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 /* Кнопка "Записаться" */
@@ -714,7 +714,7 @@ footer {
     #booking-btn {
         padding: 6px 12px;
         font-size: 16px;
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     .about-content {
