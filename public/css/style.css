@@ -118,9 +118,9 @@ nav ul li a:hover {
     width: 100%;
     min-height: 400px;
     background:
-        url("/public/img/hero1.jpeg") left center/33% no-repeat,
-        url("/public/img/hero2.jpeg") center center/33% no-repeat,
-        url("/public/img/hero3.jpeg") right center/33% no-repeat;
+        url("/public/img/hero1.webp") left center/33% no-repeat,
+        url("/public/img/hero2.webp") center center/33% no-repeat,
+        url("/public/img/hero3.webp") right center/33% no-repeat;
     display: flex;
     align-items: flex-start;
     justify-content: center;
