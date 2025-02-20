@@ -585,24 +585,9 @@ nav ul li a:hover {
 
 /* Кнопка отправки */
 .btn-submit {
-    margin-top: 15px;
-    padding: 12px;
-    background: linear-gradient(135deg, #b29482 0%, #8c6e5a 100%);
-    color: white;
-    font-weight: bold;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition:
-        background 0.3s,
-        transform 0.2s;
-    width: 100%;
     box-sizing: border-box;
-}
-
-.btn-submit:hover {
-    background: linear-gradient(135deg, #8c6e5a 0%, #705745 100%);
-    transform: translateY(-2px);
 }
 
 /* === МОДАЛЬНОЕ ОКНО === */
