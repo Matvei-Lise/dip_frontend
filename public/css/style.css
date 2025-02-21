@@ -21,6 +21,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Убираем горизонтальный скролл */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -647,6 +648,9 @@ footer {
     margin-top: auto;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* !        Адаптивность        */

@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* скрол к блокам */
   const bookingBtn = document.getElementById("booking-btn");
   const bookingSection = document.getElementById("booking");
 

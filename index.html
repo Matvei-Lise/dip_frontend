@@ -51,12 +51,11 @@
     <header id="header">
       <nav>
         <ul>
-          <li><a href="/index.html">Главная</a></li>
-          <li><a href="/pages/about.html">О нас</a></li>
-          <li><a href="/pages/services.html">Наши услуги</a></li>
-          <li><a href="/pages/team.html">Наши мастера</a></li>
-          <li><a href="/pages/reviews.html">Отзывы</a></li>
-          <li><a href="/pages/admin.html">admin</a></li>
+          <li><a href="#hero">Главная</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Наши услуги</a></li>
+          <li><a href="#team">Наши мастера</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
         </ul>
       </nav>
       <div class="burger-menu" id="burger-menu">
@@ -66,14 +65,14 @@
       </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="hero-overlay">
         <h1>Добро пожаловать на Территорию красивого тела</h1>
         <button id="booking-btn">Записаться</button>
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="#about">
       <div class="about-container">
         <!-- Изображение слева -->
         <div class="about-image">
@@ -99,7 +98,7 @@
       </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
       <div class="services-container">
         <h2 class="services-title">Наши <span>Услуги</span></h2>
 
@@ -135,7 +134,7 @@
       </div>
     </section>
 
-    <section class="team">
+    <section class="team" id="team">
       <div class="team-container">
         <h2 class="team-title">Наши <span>Мастера</span></h2>
 
@@ -165,7 +164,7 @@
       </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews" id="reviews">
       <div class="reviews-container">
         <h2 class="reviews-title">Что говорят <span>наши клиенты</span></h2>
 
@@ -269,6 +268,11 @@
     </div>
 
     <footer id="footer">
+      <nav>
+        <ul>
+          <li><a href="/pages/admin.html">admin</a></li>
+        </ul>
+      </nav>
       <p>© 2025 Территория красивого тела. Все права защищены.</p>
     </footer>
     <script type="module" src="./src/js/main.js"></script>
