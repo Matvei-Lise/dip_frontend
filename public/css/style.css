@@ -35,6 +35,7 @@ body {
     min-height: 100vh;
     max-width: 1300px;
     scroll-behavior: smooth;
+    padding-top: 50px;
 }
 
 /* Улучшаем заголовки */
@@ -48,13 +49,14 @@ h3 {
 }
 header {
     width: 100%;
+    max-width: 1300px;
     box-sizing: border-box;
     padding: 15px;
     background: #f4ede5;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
