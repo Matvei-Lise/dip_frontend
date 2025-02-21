@@ -153,6 +153,29 @@ button.delete {
 button.delete:hover {
     background: #d32f2f;
 }
+/* === СЕКЦИЯ ТЕСТОВ === */
+#test-section {
+    text-align: center;
+    margin: 20px;
+}
+
+#run-tests {
+    padding: 10px 15px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#run-tests:hover {
+    background: #388e3c;
+}
+
+#test-results {
+    margin-top: 10px;
+}
 
 /* === АДАПТИВНОСТЬ === */
 @media (max-width: 768px) {

@@ -11,10 +11,17 @@
       <h1>Админ-панель</h1>
       <a href="/index.html">Главная</a>
     </div>
+
     <div id="admin-login">
       <input type="password" id="admin-password" placeholder="Введите пароль" />
       <button id="login-btn">Войти</button>
     </div>
+
+    <div id="test-section" style="display: none">
+      <button id="run-tests">Запустить тесты</button>
+      <div id="test-results"></div>
+    </div>
+
     <div id="admin-content" style="display: none">
       <h2>Заявки</h2>
       <div class="table-container">
@@ -31,6 +38,7 @@
         </table>
       </div>
     </div>
+
     <script type="module" src="/js/admin.js"></script>
   </body>
 </html>

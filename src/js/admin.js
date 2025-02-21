@@ -4,14 +4,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminContent = document.getElementById("admin-content");
   const bookingsTable = document.getElementById("bookings-table");
 
+  const testSection = document.createElement("div");
+  testSection.id = "test-section";
+  testSection.style.display = "none"; // Скрываем изначально
+  testSection.innerHTML = `
+    <button id="run-tests">Запустить тесты</button>
+    <div id="test-results"></div>
+  `;
+
+  document.querySelector(".title").after(testSection);
+
   const ADMIN_PASS = "nova1566"; // Укажи свой пароль
 
   loginBtn.addEventListener("click", () => {
     if (adminPassword.value === ADMIN_PASS) {
-      // Скрываем блок логина
       document.getElementById("admin-login").style.display = "none";
 
-      // Показываем контент админки
+      // Показываем секцию тестов и админ-контент
+      testSection.style.display = "block";
       adminContent.style.display = "block";
 
       // Загружаем заявки
@@ -21,6 +31,61 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.getElementById("run-tests").addEventListener("click", async () => {
+    const testResults = document.getElementById("test-results");
+    testResults.innerHTML = "<p>Запуск тестов...</p>";
+
+    const tests = [
+      { name: "API Доступность", result: await testApi() },
+      { name: "Загрузка главной страницы", result: await testHomePage() },
+      { name: "Проверка формы", result: await testForm() },
+    ];
+
+    testResults.innerHTML = `
+      <table>
+        <tr><th>Тест</th><th>Результат</th></tr>
+        ${tests
+          .map(
+            (test) =>
+              `<tr><td>${test.name}</td><td style="color: ${
+                test.result ? "green" : "red"
+              }">${test.result ? "✔ Успех" : "✖ Ошибка"}</td></tr>`
+          )
+          .join("")}
+      </table>
+    `;
+  });
+
+  async function testApi() {
+    try {
+      const response = await fetch(
+        "https://dip-backend.onrender.com/api/bookings"
+      );
+      return response.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  async function testHomePage() {
+    try {
+      const response = await fetch("https://dip-frontend.onrender.com/");
+      return response.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  async function testForm() {
+    try {
+      const response = await fetch("https://dip-frontend.onrender.com/");
+      const text = await response.text();
+      return text.includes('<form id="booking-form"');
+    } catch {
+      return false;
+    }
+  }
+
   async function loadBookings() {
     try {
       const response = await fetch(
@@ -28,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const bookings = await response.json();
 
-      // Удаляем все строки кроме первой (заголовки)
       const rows = bookingsTable.querySelectorAll("tr:not(:first-child)");
       rows.forEach((row) => row.remove());
 
