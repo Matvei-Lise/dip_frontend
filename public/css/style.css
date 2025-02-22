@@ -182,13 +182,21 @@ nav ul li a:hover {
 }
 
 /* !!           ! about !          !! */
-/* === ABOUT (О НАС) === */
 .about {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 30px 0;
     background: #fdfaf6;
+    gap: 40px;
+}
+
+.about-pages {
+    padding: 30px 10px;
+}
+.about-container.reverse {
+    flex-direction: row-reverse;
 }
 
 /* Контейнер для флекс-расположения */
@@ -243,7 +251,7 @@ nav ul li a:hover {
     font-size: 16px;
     line-height: 1.6;
     color: #4a3b2b;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 /* Кнопка "Подробнее" */
@@ -726,6 +734,15 @@ footer {
 
     .about-content {
         text-align: center;
+    }
+    .about-container,
+    .about-container.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 300px;
     }
 
     .about-image img {
