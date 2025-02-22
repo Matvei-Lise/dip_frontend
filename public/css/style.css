@@ -339,6 +339,19 @@ nav ul li a:hover {
     line-height: 1.5;
 }
 
+.duration {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: 18px;
+    color: #b29482;
+    font-weight: bold;
+    margin-top: 5px;
+}
 /* Кнопка "Все услуги" */
 .btn-more {
     display: inline-block;
