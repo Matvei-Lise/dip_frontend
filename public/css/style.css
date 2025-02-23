@@ -212,6 +212,7 @@ nav ul li a:hover {
 .about-image {
     flex: 1;
     position: relative;
+    max-width: 320px;
 }
 
 .about-image img {
@@ -774,10 +775,6 @@ footer p {
     .about-container.reverse {
         flex-direction: column;
         text-align: center;
-    }
-
-    .about-image img {
-        max-width: 300px;
     }
 
     .about-image img {
