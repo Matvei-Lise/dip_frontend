@@ -15,9 +15,9 @@
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("/fonts/Poppins-SemiBold.woff2") format("woff2");
-    font-weight: 600;
+    font-family: "Leotaro";
+    src: url("/fonts/Leotaro-Regular.woff2") format("woff2");
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -49,11 +49,21 @@ body {
 h1,
 h2,
 h3 {
-    font-family: "Poppins", sans-serif !important;
+    font-family:
+        "Poppins",
+        sans-serif /*!important */;
     font-weight: 600;
     text-transform: uppercase;
     color: #4a3b2b;
 }
+
+h2 span {
+    font-family: "Leotaro", sans-serif;
+    font-size: 38px;
+    color: #6e4f3a;
+    display: block;
+}
+
 header {
     width: 100%;
     max-width: 1300px;
@@ -95,6 +105,7 @@ nav ul li {
 }
 
 nav ul li a {
+    font-family: "Leotaro", sans-serif;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -164,6 +175,10 @@ nav ul li a:hover {
 
 /* Полупрозрачный слой для контраста текста */
 .hero-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0);
     padding: 40px;
     margin-top: 80px;
@@ -172,8 +187,7 @@ nav ul li a:hover {
 
 /* Заголовок */
 .hero h1 {
-    font-family: ;
-
+    font-family: "Leotaro", sans-serif;
     font-size: 36px;
     font-weight: 600;
     color: #df8943;
@@ -264,13 +278,6 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-.about-title span {
-    font-family: "Poppins", sans-serif;
-    font-size: 38px;
-    color: #6e4f3a;
-    display: block;
-}
-
 .about-content p {
     font-size: 16px;
     line-height: 1.6;
@@ -314,11 +321,11 @@ nav ul li a:hover {
     margin-bottom: 40px;
 }
 
-.services-title span {
-    font-family: "Poppins", sans-serif;
+.services-title span,
+.booking-title span,
+.reviews-title,
+.team-title span {
     font-size: 42px;
-    color: #6e4f3a;
-    display: block;
     margin-top: 5px;
 }
 
@@ -412,14 +419,6 @@ nav ul li a:hover {
     margin-bottom: 40px;
 }
 
-.team-title span {
-    font-family: "Poppins", sans-serif;
-    font-size: 42px;
-    color: #6e4f3a;
-    display: block;
-    margin-top: 5px;
-}
-
 /* Карточки */
 .team-cards {
     display: flex;
@@ -465,14 +464,6 @@ nav ul li a:hover {
     color: #b29482;
     font-weight: 500;
     margin-bottom: 40px;
-}
-
-.reviews-title span {
-    font-family: "Poppins", sans-serif;
-    font-size: 42px;
-    color: #6e4f3a;
-    display: block;
-    margin-top: 5px;
 }
 
 /* Карточки отзывов */
@@ -554,14 +545,6 @@ nav ul li a:hover {
     letter-spacing: 2px;
     color: #b29482;
     font-weight: 500;
-}
-
-.booking-title span {
-    font-family: "Poppins", sans-serif;
-    font-size: 42px;
-    color: #6e4f3a;
-    display: block;
-    margin-top: 5px;
 }
 
 .booking-subtitle {
@@ -800,7 +783,7 @@ footer p {
     #booking-btn {
         padding: 6px 12px;
         font-size: 16px;
-        margin-top: 10px;
+        margin-top: 0;
     }
 
     .about-content {
@@ -817,73 +800,41 @@ footer p {
         max-height: 200px;
     }
 
-    .services-container {
+    .services-container,
+    .team-container,
+    .reviews-container {
         padding: 0 10px;
     }
-    .services-title {
+
+    .services-title,
+    .team-title,
+    .reviews-title,
+    .booking-title {
         font-size: 18px;
     }
 
-    .services-title span {
+    h2 span {
         font-size: 36px;
     }
 
-    .services-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-card {
-        max-width: 90%;
-    }
-    .team-container {
-        padding: 0 10px;
-    }
-    .team-title {
-        font-size: 18px;
-    }
-
-    .team-title span {
-        font-size: 36px;
-    }
-
+    .services-cards,
+    .reviews-cards,
     .team-cards {
         flex-direction: column;
         align-items: center;
     }
 
+    .service-card,
+    .booking-container {
+        max-width: 90%;
+    }
+
     .team-cards .card img {
         min-height: 280px;
-    }
-    .reviews-container {
-        padding: 0 10px;
-    }
-    .reviews-title {
-        font-size: 18px;
-    }
-
-    .reviews-title span {
-        font-size: 36px;
-    }
-
-    .reviews-cards {
-        flex-direction: column;
-        align-items: center;
     }
 
     .review-card {
         max-width: 360px;
-    }
-    .booking-title {
-        font-size: 18px;
-    }
-
-    .booking-title span {
-        font-size: 36px;
-    }
-
-    .booking-container {
-        max-width: 90%;
     }
 }
 
@@ -892,7 +843,7 @@ footer p {
         margin-top: 0;
     }
     .hero h1 {
-        margin-bottom: 5px;
-        padding: 5px 10px;
+        margin: 15px 10px 5px;
+        padding: 0;
     }
 }
