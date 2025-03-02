@@ -733,6 +733,7 @@ footer p {
     }
 
     nav ul.show {
+        margin-top: 3px;
         display: flex; /* Показываем перед анимацией */
         padding: 0;
         opacity: 1;
